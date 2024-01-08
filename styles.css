@@ -1739,12 +1739,12 @@ h2.movie-title-modal {
 @media (max-width: 530px) {
     .header-box{
         position: relative;
-        width: 100%;
+        width: 110%;
     }
     .header-box h1 {
         position: relative;
         left: 12.5%;
-        top: 0;
+        top: -5%;
         font-size: 15px;
         font-weight: bold;
     }
