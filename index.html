@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        
+        <title>Movie Reservation Website</title>
+        <link rel="icon" href= 
+        "Screenshot 2023-12-10 194453.png"
+          type="image/x-icon"> 
+</head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="path/to/fontawesome.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600;700&family=Open+Sans:wght@500&family=Raleway:wght@100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+            <div class="header-box">
+                <div id="logo">
+                <span>M</span>
+            </div>              
+            <h1>Movie Reservation Site</h1>
+            
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search movies...">
+                <i class="fa fa-search"></i>
+            </div>
+            <div id="live-search-results" class="live-search-results"></div>
+             
+    
+</div>
+<div class="user">
+    <h2 id="greeting"></h2>
+<i id="userIcon" class="fas fa-user"></i>
+</div>   
+        <!-- Modal Structure -->
+        <div id="modal-user" class="modal-user">
+            <div class="modal-user-content">
+                <!-- Close button at the top left corner -->
+                <span class="close">&times;</span>
+                <form id="userForm">
+                    <label for="firstName">First Name:</label><br>
+                    <input type="text" id="firstName" name="firstName" placeholder="FirstName"><br>
+                    <label for="lastName">Last Name:</label><br>
+                    <input type="text" id="lastName" name="lastName" placeholder="LastName"><br>
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email" placeholder="firstname.lastname@email.com"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+                <button id="signOutButton" style="display: none;">Sign Out</button>
+                <!-- Add the Show Purchase History button, initially hidden -->
+                <button id="showHistoryButton" style="display: none;">Show Purchase History</button>
+            </div>
+        </div>
+        
+        <div class="current-movie-header">
+            <h2 class="nowplaying">Now Playing</h2>
+            <h3 id="seeAllCurrentMovies">See All</h3>
+        </div>
+        <div class="current-movies">
+            <div class="movie" id="movie-1">
+                <button class="movie-button">
+                    <img src="cgYg04miVQUAG2FKk3amSnnHzOp.jpg" alt="Movie 1">
+                </button>
+                <div class="title-year">
+                <h5>Barbe</h5>
+            </div>
+                <div class="m-year">2023</div>
+            
+            </div>
+            <div class="movie" id="movie-2">
+                <button class="movie-button">
+                    <img src="aqZ75oN6yd7UTShYIMNlpSdDbbH.jpg" alt="Movie 2">
+                </button>
+                <div class="title-year">
+                <h5>Oppenheimer</h5>
+            </div>
+                <div class="m-year">2023</div>
+            
+            </div>
+            <div class="movie" id="movie-3">
+                <button class="movie-button">
+                    <img src="cropped-Across-The-Spider-Verse__scaled_800.jpg" alt="Movie 3">
+                </button>
+                <div class="title-year">
+                <h5>Spider-Man Across The Spider Verse</h5>
+            </div>
+                <div class="m-year">2023</div>
+            </div>
+            <div class="movie" id="movie-4">
+                <button class="movie-button">
+                    <img src="Elemental-Real-3D-Payoff-Poster.webp" alt="Movie 4">
+                </button>
+                <div class="title-year">
+                <h5>Elemental</h5>
+            </div>
+                <div class="m-year">2023</div>
+            </div>
+            <div class="movie" id="movie-5">
+                <button class="movie-button">
+                    <img src="trolls_band_together_ver2_xlg.jpg" alt="Movie 5">
+                </button>
+                <div class="title-year">
+                <h5>Trolls Band Together</h5>
+            </div>
+                <div class="m-year">2023</div>
+        </div>
+        <div class="movie" id="movie-6">
+            <button class="movie-button">
+                <img src="trolls_band_together_ver2_xlg.jpg" alt="Movie 6">
+            </button>
+            <div class="title-year">
+            <h5>Trolls Band Together</h5>
+        </div>
+            <div class="m-year">2023</div>
+    </div>
+    <div class="movie" id="movie-7">
+        <button class="movie-button">
+            <img src="trolls_band_together_ver2_xlg.jpg" alt="Movie 7">
+        </button>
+        <div class="title-year">
+        <h5>Trolls Band Together</h5>
+    </div>
+        <div class="m-year">2023</div>
+</div>
+        </div>
+        <div class="upcoming-movie-header">
+            <h2 class="comingsoon">Coming Soon</h2>
+            <h3 id="seeAllUpcomingMovies">See All</h3>
+        </div>
+        <div class="upcoming-movies">
+            <div class="upcoming-movie" id="upcoming-movie-1">
+                <button class="upcoming-movie-button">
+                    <img src="haunted_mansion_ver3_xlg.jpg" alt="Upcoming Movie 1"/>
+                </button>
+                <div class="title-year">
+                <h5>Haunted Mansion</h5>
+                </div>
+                <div class="m-year">2023</div>
+                
+            </div>
+            <div class="upcoming-movie" id="upcoming-movie-2">
+                <button class="upcoming-movie-button">
+                    <img src="hunger_games_the_ballad_of_songbirds_and_snakes_ver10.jpg" alt="Upcoming Movie 2"/>
+                </button>
+                <div class="title-year">
+                <h5>Hunger Games: The Ballad of Songbirds and Snakes</h5>
+                </div>
+                    <div class="m-year">2023</div>
+                
+            </div>
+            <div class="upcoming-movie" id="upcoming-movie-3">
+                <button class="upcoming-movie-button">
+                    <img src="marvel.jpg" alt="Upcoming Movie 3"/>
+                    </button>
+                    <div class="title-year">
+                    <h5>The Marvels</h5>
+                    </div>
+                    <div class="m-year">2023</div>
+                
+            </div>
+            <div class="upcoming-movie" id="upcoming-movie-4">
+                <button class="upcoming-movie-button">
+                    <img src="wonka.jpg" alt="Upcoming Movie 4"/>
+                </button>
+                <div class="title-year">
+                <h5>Wonka</h5>
+                </div>
+                    <div class="m-year">2023</div>
+                
+            </div>
+            <div class="upcoming-movie" id="upcoming-movie-5">
+                <button class="upcoming-movie-button">
+                    <img src="wonka.jpg" alt="Upcoming Movie 5"/>
+                </button>
+                <div class="title-year">
+                <h5>Wonka</h5>
+                </div>
+                    <div class="m-year">2023</div>
+                
+            </div>
+            <div class="upcoming-movie" id="upcoming-movie-6">
+                <button class="upcoming-movie-button">
+                    <img src="wonka.jpg" alt="Upcoming Movie 6"/>
+                </button>
+                <div class="title-year">
+                <h5>Wonka</h5>
+                </div>
+                    <div class="m-year">2023</div>
+                
+            </div>
+        </div>
+        <div id="modal-movie-1" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/pBk4NYhWNMM" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span> <span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+                <div class="button-div">
+                <button class="book-now-btn">Book Now</button>
+            </div>
+            </div>
+        </div>
+        <div id="modal-movie-2" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/bK6ldnjE3Y0?si=au0b2oGmloX_WVSM" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+                <div class="button-div">
+                <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-movie-3" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/shW9i6k8cB0?si=5zRxUNPP_POg9v4z" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+                <div class="button-div">
+                <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-movie-4" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/hXzcyx9V0xw?si=95DbzircyxGsZYuv" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title"></h4>
+                    <div class="age-rating"></div>
+                </div>
+                <div class="movie-details">
+                    <span class="year"></span>
+                    <span class="details-text"></span>
+                    <span class="duration"></span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors"></span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director"></span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source"></span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot"></span></span>
+                </div>
+                <div class="button-div">
+                <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-movie-5" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/qZ40Z62tcXM?si=lPS9OLBU3fW33bbG" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title"></h4>
+                    <div class="age-rating"></div>
+                </div>
+                <div class="movie-details">
+                    <span class="year"></span>
+                    <span class="details-text"></span>
+                    <span class="duration"></span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors"></span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director"></span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source"></span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot"></span></span>
+                </div>
+                <div class="button-div">
+                <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-movie-6" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/NxW_X4kzeus?si=bappnCZe-iyFQ5Kg" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title"></h4>
+                    <div class="age-rating"></div>
+                </div>
+                <div class="movie-details">
+                    <span class="year"></span>
+                    <span class="details-text"></span>
+                    <span class="duration"></span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors"></span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director"></span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source"></span><span class="gap"> </span><span class="rates"></span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot"></span></span>
+                </div>
+                <div class="button-div">
+                <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-movie-7" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/f7EDFdA10pg?si=UoHH77nezS0S1XmP" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title"></h4>
+                    <div class="age-rating"></div>
+                </div>
+                <div class="movie-details">
+                    <span class="year"></span>
+                    <span class="details-text"></span>
+                    <span class="duration"></span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors"></span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director"></span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source"></span><span class="gap"> </span><span class="rates"></span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot"></span></span>
+                </div>
+                <div class="button-div">
+                <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-upcoming-movie-1" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/AjLKTz81bj8?si=xmgj93u52VpzpguH" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+            </div>
+        </div>
+        <div id="modal-upcoming-movie-2" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/otNh9bTjXWg?si=R5nlhDPcW5kcdZxC" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+                <div class="button-div">
+                <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-upcoming-movie-3" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/Way9Dexny3w?si=EFhl8UvJZto_wc_Q" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+            </div>
+        </div>
+        <div id="modal-upcoming-movie-4" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/FV3bqvOHRQo?si=JceBjMOP8djafWfI" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+            </div>
+        </div>
+        <div id="modal-upcoming-movie-5" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/oyRxxpD3yNw?si=6fsbEv44UlJkAj7U" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+            </div>
+        </div>
+        <div id="modal-upcoming-movie-6" class="modal">
+            <div class="modal-content">
+                <span class="close-button"><i class="fas fa-arrow-left"></i></span>
+                <iframe class="modal-video" src="https://www.youtube.com/embed/fFtdbEgnUOk?si=4J8sJ1X1zj9c7btu" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-box">
+                    <div class="inner-header">
+                    <h4 class="movie-title">Barbie</h4>
+                    <div class="age-rating">age rating</div>
+                </div>
+                <div class="movie-details">
+                    <span class="year">2023</span>
+                    <span class="details-text">Comedy, Music, Critic's Choice</span>
+                    <span class="duration">1 h 54 min</span>
+                </div>
+                </div>
+                <div class="more-details">
+                    <span class="actor"><span class="actors-b">Starring: </span><span class="actors">Actors</span></span>
+                    <span class="directors"><span class="director-b">Directed By: </span><span class="director">Directors</span></span>
+                    <span class="rate"><span class="rating-b">Ratings: </span><span class="source">Source-</span><span class="gap"> </span><span class="rates">rates</span></span>
+                    <span class="synopsises"><span class="synopsis-b">Synopsis: </span><span class="plot">Barbie and Ken are having the
+                        time of their lives in the colorful and seemingly perfect world of Barbie Land. 
+                        However, when they get a chance to go to the real world, 
+                        they soon discover the joys and perils
+                        among humans.</span></span>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="ticket-modal-movie-1">
+            <div class="modal-content-ticket">
+                <span class="close-btn" id="close-ticket-modal-movie-1"><i class="fas fa-arrow-left"></i></span>
+                <h2 class="movie-title-modal">Movie Title</h2>
+                <h2 class="location">Select a Location</h2>
+                <div class="location-buttons-container">
+                    <button class="location-button">Helsinki:
+                        Itis
+                    </button>
+                    <button class="location-button">Helsinki:
+                        Tennispalatsi
+                    </button>
+                    <button class="location-button">Vantaa:
+                        Flamingo
+                    </button>
+                    <button class="location-button">Espoo:
+                        Omena
+                    </button>
+                    <button class="location-button">Espoo:
+                        Sello
+                    </button>
+                </div>
+                <div class="date-selection-container" style="display: none;">
+                    <h3 class="date">Select Date</h3>
+                    <div class="date-buttons-container">
+                        <!-- Dynamically generate or manually insert buttons for the dates -->
+                        <button class="date-button">6.11</button>
+                        <button class="date-button">7.11</button>
+                        <button class="date-button">8.11</button>
+                        <button class="date-button">9.11</button>
+                        <button class="date-button">10.11</button>
+                        <button class="date-button">11.11</button>
+                        <button class="date-button">12.11</button>
+                        <!-- Add more buttons for each date -->
+                    </div>
+                </div>
+                <div class="time-selection-container" style="display: none;">
+                    <h3 class="time">Select a Time</h3>
+                    <div class="time-buttons-container" id="time-buttons-container-movie-1">
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-button-fix">
+                        <div class="time-slot" data-date="10.12" style="display: none;">
+                            <button class="time-button">10:00 12/100
+                            </button>
+                            <button class="time-button">12:01 40/120
+                            </button>
+                            <button class="time-button">14:01 38/160
+                            </button>
+                            <button class="time-button">18:01 90/200
+                            </button>
+                            <button class="time-button">20:00 286/300</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                    </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="7.11" style="display: none;">
+                            <button class="time-button">10:05 46/100
+                            </button>
+                            <button class="time-button">12:06 56/120
+                            </button>
+                            <button class="time-button">14:06 100/160
+                            </button>
+                            <button class="time-button">18:06 108/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                    
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="8.11" style="display: none;">
+                            <button class="time-button">10:10 31/100
+                            </button>
+                            <button class="time-button">14:11 79/120
+                            </button>
+                            <button class="time-button">16:11 22/160
+                            </button>
+                            <button class="time-button">18:11 99/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="9.11" style="display: none;">
+                            <button class="time-button">10:15 34/100
+                            </button>
+                            <button class="time-button">14:16 88/120
+                            </button>
+                            <button class="time-button">16:16 119/160
+                            </button>
+                            <button class="time-button">18:16 188/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                    
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="10.11" style="display: none;">
+                            <button class="time-button">10:20 55/100
+                            </button>
+                            <button class="time-button">14:21 19/120
+                            </button>
+                            <button class="time-button">16:21 37/160
+                            </button>
+                            <button class="time-button">18:21 92/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="11.11" style="display: none;">
+                            <button class="time-button">11:00 35/100</button>
+                            <button class="time-button">01:00 17/120</button>
+                            <button class="time-button">12:00 25/150</button>
+                            <button class="time-button">12:00 72/200</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                        <div class="time-slot" data-date="12.11" style="display: none;">
+                            <button class="time-button">11:00 35/100</button>
+                            <button class="time-button">01:00 17/120</button>
+                            <button class="time-button">12:00 25/150</button>
+                            <button class="time-button">12:00 72/200</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                    </div>
+                </div>
+                <div class="seat-selection-container" style="display: none;">
+                    <h3 class="seat">Select Your Seats</h3>
+                    <div class="counter" id="adultCounter">
+                        <label for="adults">Adults (€16.52 each):</label>
+                        <div class="section">
+                        <button class="button" onclick="changeTicketCount('adults', -1)">-</button>
+                        <input type="text" id="adults" value="0">
+                        <button class="button" onclick="changeTicketCount('adults', 1)">+</button>
+                    </div>
+                    </div>
+                    
+                    <div class="counter" id="childrenCounter">
+                        <label for="children">Children (€11.92 each):</label>
+                        <div class="section">
+                        <button class="button" onclick="changeTicketCount('children', -1)">-</button>
+                        <input type="text" id="children" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('children', 1)">+</button>
+                    </div>
+                    </div>
+                    
+                    <div class="counter" id="seniorCounter">
+                        <label for="seniors">Seniors (€13.72 each):</label>
+                        <div class="section">
+                        <button class="button" onclick="changeTicketCount('seniors', -1)">-</button>
+                        <input type="text" id="seniors" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('seniors', 1)">+</button>
+                    </div>
+                    </div>
+                    
+                    <div class="counter" id="studentsCounter">
+                        <label for="students">Students (€11.92 each):</label>
+                        <div class="section">
+                        <button class="button" onclick="changeTicketCount('students', -1)">-</button>
+                        <input type="text" id="students" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('students', 1)">+</button>
+                    </div>
+                    </div>
+                    
+                    <div class="counter" id="wheelchairCounter">
+                        <label for="wheelchair">Wheelchair (€11.92 each):</label>
+                        <div class="section">
+                        <button class="button" onclick="changeTicketCount('wheelchair', -1)">-</button>
+                        <input type="text" id="wheelchair" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('wheelchair', 1)">+</button>
+                    </div>
+                    </div>
+                    
+                    <div id="totalCounter">
+                        <label for="total">Total:</label>
+                        <input type="text" id="total" value="€0" readonly>
+                    </div>
+                    
+                    <div class="seat-selection-container" style="display: none;"></div>
+                    <div class="seat-plan-idea">
+                        <div class="inactive"> 
+                       <button class="inactive-btn"></button>
+                       <p>Inactive Seats</p>
+                   </div> 
+                   <div class="active">
+                       <button class="active-btn"></button>
+                       <p>Active Seats</p>
+                   </div>
+                   <div class="selected">
+                       <button class="selected-btn"></button>
+                       <p>Selected Seats</p>
+                   </div>
+                   </div>
+                    <div class="seats-container">
+                        
+                        <!-- Seat buttons will be dynamically inserted here by JavaScript -->
+                    
+                </div>
+                <div class="buy-ticket-section">
+                    <!-- The buy ticket button will be dynamically added here -->
+                </div>
+                <div class="timer-container">
+                    <div id="countdown-timer">Timer will appear here</div>
+                </div>
+                    </div>
+                </div>
+                </div>
+        <div class="modal" id="ticket-modal-movie-2">
+            <div class="modal-content-ticket">
+                <span class="close-btn" id="close-ticket-modal-movie-2"><i class="fas fa-arrow-left"></i></span>
+                <h2 class="movie-title-modal">Movie Title</h2>
+                <h2>Select a Location</h2>
+                <div class="location-buttons-container">
+                    <button class="location-button">Helsinki:
+                        Itis
+                    </button>
+                    <button class="location-button">Helsinki:
+                        Tennispalatsi
+                    </button>
+                    <button class="location-button">Vantaa:
+                        Flamingo
+                    </button>
+                    <button class="location-button">Espoo:
+                        Omena
+                    </button>
+                    <button class="location-button">Espoo:
+                        Sello
+                    </button>
+                </div>
+                <div class="date-selection-container" style="display: none;">
+                    <h3>Select Date</h3>
+                    <div class="date-buttons-container">
+                        <!-- Dynamically generate or manually insert buttons for the dates -->
+                        <button class="date-button">6.11</button>
+                        <button class="date-button">7.11</button>
+                        <button class="date-button">8.11</button>
+                        <button class="date-button">9.11</button>
+                        <button class="date-button">10.11</button>
+                        <button class="date-button">11.11</button>
+                        <button class="date-button">12.11</button>
+                        <!-- Add more buttons for each date -->
+                    </div>
+                </div>
+                <div class="time-selection-container" style="display: none;">
+                    <h3>Select a Time</h3>
+                    <div class="time-buttons-container" id="time-buttons-container-movie-2">
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="6.11" style="display: none;">
+                            <button class="time-button">10:01 45/100</button>
+                            <button class="time-button">12:00 82/120</button>
+                            <button class="time-button">14:00 96/150</button>
+                            <button class="time-button">17:00 17/200</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="7.11" style="display: none;">
+                            <button class="time-button">11:00 69/100</button>
+                            <button class="time-button">13:00 55/120</button>
+                            <button class="time-button">15:00 38/150</button>
+                            <button class="time-button">18:00 34/200</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="8.11" style="display: none;">
+                            <button class="time-button">10:00 99/100</button>
+                            <button class="time-button">12:00 45/120</button>
+                            <button class="time-button">12:00 18/150</button>
+                            <button class="time-button">12:00 116/200</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="9.11" style="display: none;">
+                            <button class="time-button">11:00 87/100</button>
+                            <button class="time-button">01:00 47/120</button>
+                            <button class="time-button">12:00 67/150</button>
+                            <button class="time-button">12:00 174/200</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="10.11" style="display: none;">
+                            <button class="time-button">10:00 05/100</button>
+                            <button class="time-button">12:00 120/120</button>
+                            <button class="time-button">12:00 79/150</button>
+                            <button class="time-button">12:00 80/200</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                    </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="11.11" style="display: none;">
+                            <button class="time-button">11:00 67/100</button>
+                            <button class="time-button">01:00 07/120</button>
+                            <button class="time-button">12:00 99/150</button>
+                            <button class="time-button">12:00 57/200</button>
+                            <button class="time-button">12:00 200/250</button>
+                            <button class="time-button">12:00 16/300</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                        <div class="time-slot" data-date="12.11" style="display: none;">
+                            <button class="time-button">11:00 35/100</button>
+                            <button class="time-button">01:00 17/120</button>
+                            <button class="time-button">12:00 25/150</button>
+                            <button class="time-button">12:00 72/200</button>
+                            <button class="time-button">12:00 15/250</button>
+                            <button class="time-button">12:00 286/300</button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                    </div>
+                    <div class="seat-selection-container" style="display: none;">
+                        <h3>Select Your Seats</h3>
+                        <div class="counter" id="adultCounter">
+                            <label for="adults">Adults (€16.52 each):</label>
+                            <button class="button" onclick="changeTicketCount('adults', -1)">-</button>
+                            <input type="text" id="adults" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('adults', 1)">+</button>
+                        </div>
+                        
+                        <div class="counter" id="childrenCounter">
+                            <label for="children">Children (€11.92 each):</label>
+                            <button class="button" onclick="changeTicketCount('children', -1)">-</button>
+                            <input type="text" id="children" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('children', 1)">+</button>
+                        </div>
+                        
+                        <div class="counter" id="seniorCounter">
+                            <label for="seniors">Seniors (€13.72 each):</label>
+                            <button class="button" onclick="changeTicketCount('seniors', -1)">-</button>
+                            <input type="text" id="seniors" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('seniors', 1)">+</button>
+                        </div>
+                        
+                        <div class="counter" id="studentsCounter">
+                            <label for="students">Students (€11.92 each):</label>
+                            <button class="button" onclick="changeTicketCount('students', -1)">-</button>
+                            <input type="text" id="students" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('students', 1)">+</button>
+                        </div>
+                        
+                        <div class="counter" id="wheelchairCounter">
+                            <label for="wheelchair">Wheelchair (€11.92 each):</label>
+                            <button class="button" onclick="changeTicketCount('wheelchair', -1)">-</button>
+                            <input type="text" id="wheelchair" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('wheelchair', 1)">+</button>
+                        </div>
+                        
+                        <div id="totalCounter">
+                            <label for="total">Total:</label>
+                            <input type="text" id="total" value="€0" readonly>
+                        </div>
+                        <div class="seat-plan-idea">
+                            <div class="inactive"> 
+                           <button class="inactive-btn"></button>
+                           <p>Inactive Seats</p>
+                       </div> 
+                       <div class="active">
+                           <button class="active-btn"></button>
+                           <p>Active Seats</p>
+                       </div>
+                       <div class="selected">
+                           <button class="selected-btn"></button>
+                           <p>Selected Seats</p>
+                       </div>
+                       </div>
+                        <div class="seat-selection-container" style="display: none;"></div>
+                        <div class="seats-container">
+                            <!-- Seat buttons will be dynamically inserted here by JavaScript -->
+                        </div>
+                       <div class="buy-ticket-section">
+                        <!-- The buy ticket button will be dynamically added here -->
+                    </div>
+                    <div class="timer-container">
+                        <div id="countdown-timer">Timer will appear here</div>
+                    </div>
+                    </div>
+                </div>
+                    </div>
+        <div class="modal" id="ticket-modal-movie-3">
+            <div class="modal-content-ticket">
+                <span class="close-btn" id="close-ticket-modal-movie-3"><i class="fas fa-arrow-left"></i></span>
+                <h2 class="movie-title-modal">Movie Title</h2>
+                <h2>Select a Location</h2>
+                <div class="location-buttons-container">
+                    <button class="location-button">Helsinki:
+                        Itis
+                    </button>
+                    <button class="location-button">Helsinki:
+                        Tennispalatsi
+                    </button>
+                    <button class="location-button">Vantaa:
+                        Flamingo
+                    </button>
+                    <button class="location-button">Espoo:
+                        Omena
+                    </button>
+                    <button class="location-button">Espoo:
+                        Sello
+                    </button>
+                </div>
+                <div class="date-selection-container" style="display: none;">
+                    <h3>Select Date</h3>
+                    <div class="date-buttons-container">
+                        <!-- Dynamically generate or manually insert buttons for the dates -->
+                        <button class="date-button">6.11</button>
+                        <button class="date-button">7.11</button>
+                        <button class="date-button">8.11</button>
+                        <button class="date-button">9.11</button>
+                        <button class="date-button">10.11</button>
+                        <button class="date-button">11.11</button>
+                        <button class="date-button">12.11</button>
+                        <!-- Add more buttons for each date -->
+                    </div>
+                </div>
+                <div class="time-selection-container" style="display: none;">
+                    <h3>Select a Time</h3>
+                    <div class="time-buttons-container" id="time-buttons-container-movie-3">
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="6.11" style="display: none;">
+                            <button class="time-button">10:02 12/100
+                            </button>
+                            <button class="time-button">12:03 40/120
+                            </button>
+                            <button class="time-button">14:03 38/160
+                            </button>
+                            <button class="time-button">18:03 90/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="7.11" style="display: none;">
+                            <button class="time-button">10:05 46/100
+                            </button>
+                            <button class="time-button">12:06 56/120
+                            </button>
+                            <button class="time-button">14:06 100/150
+                            </button>
+                            <button class="time-button">18:06 108/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                    
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="8.11" style="display: none;">
+                            <button class="time-button">10:10 31/100
+                            </button>
+                            <button class="time-button">14:11 79/120
+                            </button>
+                            <button class="time-button">16:11 22/150
+                            </button>
+                            <button class="time-button">18:11 99/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="9.11" style="display: none;">
+                            <button class="time-button">10:15 34/100
+                            </button>
+                            <button class="time-button">14:16 88/120
+                            </button>
+                            <button class="time-button">16:16 119/150
+                            </button>
+                            <button class="time-button">18:16 188/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                    
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="10.11" style="display: none;">
+                            <button class="time-button">10:20 55/100
+                            </button>
+                            <button class="time-button">14:21 19/120
+                            </button>
+                            <button class="time-button">16:21 37/150
+                            </button>
+                            <button class="time-button">18:21 92/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="11.11" style="display: none;">
+                            <button class="time-button">10:25 12/100
+                            </button>
+                            <button class="time-button">12:26 46/120
+                            </button>
+                            <button class="time-button">14:26 138/150
+                            </button>
+                            <button class="time-button">16:26 24/200
+                            </button>
+                            <button class="time-button">18:26 208/320
+                            </button>
+                            <button class="time-button">20:26 278/360
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                        <div class="time-slot" data-date="12.11" style="display: none;">
+                            <button class="time-button">10:30 45/100
+                            </button>
+                            <button class="time-button">12:31 117/120
+                            </button>
+                            <button class="time-button">14:31 75/150
+                            </button>
+                            <button class="time-button">16:31 156/200
+                            </button>
+                            <button class="time-button">18:31 167/320
+                            </button>
+                            <button class="time-button">20:31 175/360
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                    </div>
+                </div>
+                <div class="seat-selection-container" style="display: none;">
+                    <h3>Select Your Seats</h3>
+                    <div class="counter" id="adultCounter">
+                        <label for="adults">Adults (€16.52 each):</label>
+                        <button class="button" onclick="changeTicketCount('adults', -1)">-</button>
+                        <input type="text" id="adults" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('adults', 1)">+</button>
+                    </div>
+                    
+                    <div class="counter" id="childrenCounter">
+                        <label for="children">Children (€11.92 each):</label>
+                        <button class="button" onclick="changeTicketCount('children', -1)">-</button>
+                        <input type="text" id="children" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('children', 1)">+</button>
+                    </div>
+                    
+                    <div class="counter" id="seniorCounter">
+                        <label for="seniors">Seniors (€13.72 each):</label>
+                        <button class="button" onclick="changeTicketCount('seniors', -1)">-</button>
+                        <input type="text" id="seniors" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('seniors', 1)">+</button>
+                    </div>
+                    
+                    <div class="counter" id="studentsCounter">
+                        <label for="students">Students (€11.92 each):</label>
+                        <button class="button" onclick="changeTicketCount('students', -1)">-</button>
+                        <input type="text" id="students" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('students', 1)">+</button>
+                    </div>
+                    
+                    <div class="counter" id="wheelchairCounter">
+                        <label for="wheelchair">Wheelchair (€11.92 each):</label>
+                        <button class="button" onclick="changeTicketCount('wheelchair', -1)">-</button>
+                        <input type="text" id="wheelchair" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('wheelchair', 1)">+</button>
+                    </div>
+                    
+                    <div id="totalCounter">
+                        <label for="total">Total:</label>
+                        <input type="text" id="total" value="€0" readonly>
+                    </div>
+                    <div class="seat-plan-idea">
+                        <div class="inactive"> 
+                       <button class="inactive-btn"></button>
+                       <p>Inactive Seats</p>
+                   </div> 
+                   <div class="active">
+                       <button class="active-btn"></button>
+                       <p>Active Seats</p>
+                   </div>
+                   <div class="selected">
+                       <button class="selected-btn"></button>
+                       <p>Selected Seats</p>
+                   </div>
+                   </div>
+                    <div class="seat-selection-container" style="display: none;"></div>
+                    <div class="seats-container">
+                        <!-- Seat buttons will be dynamically inserted here by JavaScript -->
+                    </div>
+                       <div class="buy-ticket-section">
+                           <!-- The buy ticket button will be dynamically added here -->
+                       </div>
+                       <div class="timer-container">
+                        <div id="countdown-timer">Timer will appear here</div>
+                    </div>
+                </div>
+                </div>
+                </div>
+        <div class="modal" id="ticket-modal-movie-4">
+            <div class="modal-content-ticket">
+                <span class="close-btn" id="close-ticket-modal-movie-4"><i class="fas fa-arrow-left"></i></span>
+                <h2 class="movie-title-modal">Movie Title</h2>
+                <h2>Select a Location</h2>
+                <div class="location-buttons-container">
+                    <button class="location-button">Helsinki:
+                        Itis
+                    </button>
+                    <button class="location-button">Helsinki:
+                        Tennispalatsi
+                    </button>
+                    <button class="location-button">Vantaa:
+                        Flamingo
+                    </button>
+                    <button class="location-button">Espoo:
+                        Omena
+                    </button>
+                    <button class="location-button">Espoo:
+                        Sello
+                    </button>
+                </div>
+                <div class="date-selection-container" style="display: none;">
+                    <h3>Select Date</h3>
+                    <div class="date-buttons-container">
+                        <!-- Dynamically generate or manually insert buttons for the dates -->
+                        <button class="date-button">6.11</button>
+                        <button class="date-button">7.11</button>
+                        <button class="date-button">8.11</button>
+                        <button class="date-button">9.11</button>
+                        <button class="date-button">10.11</button>
+                        <button class="date-button">11.11</button>
+                        <button class="date-button">12.11</button>
+                        <!-- Add more buttons for each date -->
+                    </div>
+                </div>
+                <div class="time-selection-container" style="display: none;">
+                    <h3>Select a Time</h3>
+                    <div class="time-buttons-container" id="time-buttons-container-movie-4">
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="6.11" style="display: none;">
+                            <button class="time-button">10:46 14/100
+                            </button>
+                            <button class="time-button">12:01 50/120
+                            </button>
+                            <button class="time-button">14:01 78/160
+                            </button>
+                            <button class="time-button">18:01 177/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="7.11" style="display: none;">
+                            <button class="time-button">10:05 46/100
+                            </button>
+                            <button class="time-button">12:06 54/120
+                            </button>
+                            <button class="time-button">14:06 147/150
+                            </button>
+                            <button class="time-button">18:06 127/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                    
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="8.11" style="display: none;">
+                            <button class="time-button">10:10 36/100
+                            </button>
+                            <button class="time-button">14:11 94/120
+                            </button>
+                            <button class="time-button">16:11 40/150
+                            </button>
+                            <button class="time-button">18:11 199/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="9.11" style="display: none;">
+                            <button class="time-button">10:15 83/100
+                            </button>
+                            <button class="time-button">14:16 89/120
+                            </button>
+                            <button class="time-button">16:16 129/150
+                            </button>
+                            <button class="time-button">18:16 64/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                    
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="10.11" style="display: none;">
+                            <button class="time-button">10:20 65/100
+                            </button>
+                            <button class="time-button">14:21 59/120
+                            </button>
+                            <button class="time-button">16:21 46/150
+                            </button>
+                            <button class="time-button">18:21 175/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="11.11" style="display: none;">
+                            <button class="time-button">10:25 38/100
+                            </button>
+                            <button class="time-button">12:26 27/120
+                            </button>
+                            <button class="time-button">14:26 168/150
+                            </button>
+                            <button class="time-button">16:26 84/200
+                            </button>
+                            <button class="time-button">18:26 259/320
+                            </button>
+                            <button class="time-button">20:26 347/360
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                        <div class="time-slot" data-date="12.11" style="display: none;">
+                            <button class="time-button">10:30 85/100
+                            </button>
+                            <button class="time-button">12:31 101/120
+                            </button>
+                            <button class="time-button">14:31 27/150
+                            </button>
+                            <button class="time-button">16:31 140/200
+                            </button>
+                            <button class="time-button">18:31 286/320
+                            </button>
+                            <button class="time-button">20:31 95/360
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                    </div>
+                </div>
+                <div class="seat-selection-container" style="display: none;">
+                    <h3>Select Your Seats</h3>
+                    <div class="counter" id="adultCounter">
+                        <label for="adults">Adults (€16.52 each):</label>
+                        <button class="button" onclick="changeTicketCount('adults', -1)">-</button>
+                        <input type="text" id="adults" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('adults', 1)">+</button>
+                    </div>
+                    
+                    <div class="counter" id="childrenCounter">
+                        <label for="children">Children (€11.92 each):</label>
+                        <button class="button" onclick="changeTicketCount('children', -1)">-</button>
+                        <input type="text" id="children" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('children', 1)">+</button>
+                    </div>
+                    
+                    <div class="counter" id="seniorCounter">
+                        <label for="seniors">Seniors (€13.72 each):</label>
+                        <button class="button" onclick="changeTicketCount('seniors', -1)">-</button>
+                        <input type="text" id="seniors" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('seniors', 1)">+</button>
+                    </div>
+                    
+                    <div class="counter" id="studentsCounter">
+                        <label for="students">Students (€11.92 each):</label>
+                        <button class="button" onclick="changeTicketCount('students', -1)">-</button>
+                        <input type="text" id="students" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('students', 1)">+</button>
+                    </div>
+                    
+                    <div class="counter" id="wheelchairCounter">
+                        <label for="wheelchair">Wheelchair (€11.92 each):</label>
+                        <button class="button" onclick="changeTicketCount('wheelchair', -1)">-</button>
+                        <input type="text" id="wheelchair" value="0" readonly>
+                        <button class="button" onclick="changeTicketCount('wheelchair', 1)">+</button>
+                    </div>
+                    
+                    <div id="totalCounter">
+                        <label for="total">Total:</label>
+                        <input type="text" id="total" value="€0" readonly>
+                    </div>
+                    <div class="seat-plan-idea">
+                        <div class="inactive"> 
+                       <button class="inactive-btn"></button>
+                       <p>Inactive Seats</p>
+                   </div> 
+                   <div class="active">
+                       <button class="active-btn"></button>
+                       <p>Active Seats</p>
+                   </div>
+                   <div class="selected">
+                       <button class="selected-btn"></button>
+                       <p>Selected Seats</p>
+                   </div>
+                   </div>
+                    <div class="seat-selection-container" style="display: none;"></div>
+                    <div class="seats-container">
+                        <!-- Seat buttons will be dynamically inserted here by JavaScript -->
+                    </div>
+                    
+                       <div class="buy-ticket-section">
+                           <!-- The buy ticket button will be dynamically added here -->
+                       </div>
+                       <div class="timer-container">
+                        <div id="countdown-timer">Timer will appear here</div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+        <div class="modal" id="ticket-modal-movie-5">
+            <div class="modal-content-ticket">
+                <span class="close-btn" id="close-ticket-modal-movie-5"><i class="fas fa-arrow-left"></i></span>
+                <h2 class="movie-title-modal">Movie Title</h2>
+                <h2>Select a Location</h2>
+                <div class="location-buttons-container">
+                    <button class="location-button">Helsinki:
+                        Itis
+                    </button>
+                    <button class="location-button">Helsinki:
+                        Tennispalatsi
+                    </button>
+                    <button class="location-button">Vantaa:
+                        Flamingo
+                    </button>
+                    <button class="location-button">Espoo:
+                        Omena
+                    </button>
+                    <button class="location-button">Espoo:
+                        Sello
+                    </button>
+                </div>
+                <div class="date-selection-container" style="display: none;">
+                    <h3>Select Date</h3>
+                    <div class="date-buttons-container">
+                        <!-- Dynamically generate or manually insert buttons for the dates -->
+                        <button class="date-button">6.11</button>
+                        <button class="date-button">7.11</button>
+                        <button class="date-button">8.11</button>
+                        <button class="date-button">9.11</button>
+                        <button class="date-button">10.11</button>
+                        <button class="date-button">11.11</button>
+                        <button class="date-button">12.11</button>
+                        <!-- Add more buttons for each date -->
+                    </div>
+                </div>
+                <div class="time-selection-container" style="display: none;">
+                    <h3>Select a Time</h3>
+                    <div class="time-buttons-container" id="time-buttons-container-movie-5">
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="6.11" style="display: none;">
+                            <button class="time-button">10:07 74/100
+                            </button>
+                            <button class="time-button">12:01 59/120
+                            </button>
+                            <button class="time-button">14:01 60/160
+                            </button>
+                            <button class="time-button">18:01 36/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="7.11" style="display: none;">
+                            <button class="time-button">10:05 84/100
+                            </button>
+                            <button class="time-button">12:06 71/120
+                            </button>
+                            <button class="time-button">14:06 148/150
+                            </button>
+                            <button class="time-button">18:06 131/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                    
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="8.11" style="display: none;">
+                            <button class="time-button">10:10 49/100
+                            </button>
+                            <button class="time-button">14:11 27/120
+                            </button>
+                            <button class="time-button">16:11 94/150
+                            </button>
+                            <button class="time-button">18:11 184/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="9.11" style="display: none;">
+                            <button class="time-button">10:15 43/100
+                            </button>
+                            <button class="time-button">14:16 116/120
+                            </button>
+                            <button class="time-button">16:16 135/150
+                            </button>
+                            <button class="time-button">18:16 174/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                    
+                        <!-- Time buttons for Date 1 -->
+                        <div class="time-slot" data-date="10.11" style="display: none;">
+                            <button class="time-button">10:20 74/100
+                            </button>
+                            <button class="time-button">14:21 94/120
+                            </button>
+                            <button class="time-button">16:21 142/150
+                            </button>
+                            <button class="time-button">18:21 194/200
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- Time buttons for Date 2 -->
+                        <div class="time-slot" data-date="11.11" style="display: none;">
+                            <button class="time-button">10:25 24/100
+                            </button>
+                            <button class="time-button">12:26 58/120
+                            </button>
+                            <button class="time-button">14:26 55/150
+                            </button>
+                            <button class="time-button">16:26 35/200
+                            </button>
+                            <button class="time-button">18:26 214/320
+                            </button>
+                            <button class="time-button">20:26 203/360
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                        <!-- ... more time slots for each date ... -->
+                        <div class="time-slot" data-date="12.11" style="display: none;">
+                            <button class="time-button">10:30 64/100
+                            </button>
+                            <button class="time-button">12:31 113/120
+                            </button>
+                            <button class="time-button">14:31 47/150
+                            </button>
+                            <button class="time-button">16:31 135/200
+                            </button>
+                            <button class="time-button">18:31 156/320
+                            </button>
+                            <button class="time-button">20:31 175/360
+                            </button>
+                            <!-- ... more time buttons ... -->
+                        </div>
+                    </div>
+                    </div>
+                    <div class="seat-selection-container" style="display: none;">
+                        <h3>Select Your Seats</h3>
+                        <div class="counter" id="adultCounter">
+                            <label for="adults">Adults (€16.52 each):</label>
+                            <button class="button" onclick="changeTicketCount('adults', -1)">-</button>
+                            <input type="text" id="adults" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('adults', 1)">+</button>
+                        </div>
+                        
+                        <div class="counter" id="childrenCounter">
+                            <label for="children">Children (€11.92 each):</label>
+                            <button class="button" onclick="changeTicketCount('children', -1)">-</button>
+                            <input type="text" id="children" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('children', 1)">+</button>
+                        </div>
+                        
+                        <div class="counter" id="seniorCounter">
+                            <label for="seniors">Seniors (€13.72 each):</label>
+                            <button class="button" onclick="changeTicketCount('seniors', -1)">-</button>
+                            <input type="text" id="seniors" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('seniors', 1)">+</button>
+                        </div>
+                        
+                        <div class="counter" id="studentsCounter">
+                            <label for="students">Students (€11.92 each):</label>
+                            <button class="button" onclick="changeTicketCount('students', -1)">-</button>
+                            <input type="text" id="students" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('students', 1)">+</button>
+                        </div>
+                        
+                        <div class="counter" id="wheelchairCounter">
+                            <label for="wheelchair">Wheelchair (€11.92 each):</label>
+                            <button class="button" onclick="changeTicketCount('wheelchair', -1)">-</button>
+                            <input type="text" id="wheelchair" value="0" readonly>
+                            <button class="button" onclick="changeTicketCount('wheelchair', 1)">+</button>
+                        </div>
+                        
+                        <div id="totalCounter">
+                            <label for="total">Total:</label>
+                            <input type="text" id="total" value="€0" readonly>
+                        </div>
+                        <div class="seat-plan-idea">
+                            <div class="inactive"> 
+                           <button class="inactive-btn"></button>
+                           <p>Inactive Seats</p>
+                       </div> 
+                       <div class="active">
+                           <button class="active-btn"></button>
+                           <p>Active Seats</p>
+                       </div>
+                       <div class="selected">
+                           <button class="selected-btn"></button>
+                           <p>Selected Seats</p>
+                       </div>
+                       </div>
+                        <div class="seat-selection-container" style="display: none;"></div>
+                        <div class="seats-container">
+                            <!-- Seat buttons will be dynamically inserted here by JavaScript -->
+                        </div>
+                           <div class="buy-ticket-section">
+                               <!-- The buy ticket button will be dynamically added here -->
+                           </div>
+                           <div class="timer-container">
+                            <div id="countdown-timer">Timer will appear here</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="modal" id="ticket-modal-movie-6">
+                    <div class="modal-content-ticket">
+                        <span class="close-btn" id="close-ticket-modal-movie-6"><i class="fas fa-arrow-left"></i></span>
+                        <h2 class="movie-title-modal">Movie Title</h2>
+                        <h2>Select a Location</h2>
+                        <div class="location-buttons-container">
+                            <button class="location-button">Helsinki:
+                                Itis
+                            </button>
+                            <button class="location-button">Helsinki:
+                                Tennispalatsi
+                            </button>
+                            <button class="location-button">Vantaa:
+                                Flamingo
+                            </button>
+                            <button class="location-button">Espoo:
+                                Omena
+                            </button>
+                            <button class="location-button">Espoo:
+                                Sello
+                            </button>
+                        </div>
+                        <div class="date-selection-container" style="display: none;">
+                            <h3>Select Date</h3>
+                            <div class="date-buttons-container">
+                                <!-- Dynamically generate or manually insert buttons for the dates -->
+                                <button class="date-button">6.11</button>
+                                <button class="date-button">7.11</button>
+                                <button class="date-button">8.11</button>
+                                <button class="date-button">9.11</button>
+                                <button class="date-button">10.11</button>
+                                <button class="date-button">11.11</button>
+                                <button class="date-button">12.11</button>
+                                <!-- Add more buttons for each date -->
+                            </div>
+                        </div>
+                        <div class="time-selection-container" style="display: none;">
+                            <h3>Select a Time</h3>
+                            <div class="time-buttons-container" id="time-buttons-container-movie-5">
+                                <!-- Time buttons for Date 1 -->
+                                <div class="time-slot" data-date="6.11" style="display: none;">
+                                    <button class="time-button">10:07 74/100
+                                    </button>
+                                    <button class="time-button">12:01 59/120
+                                    </button>
+                                    <button class="time-button">14:01 60/160
+                                    </button>
+                                    <button class="time-button">18:01 36/200
+                                    </button>
+                                    <!-- ... more time buttons ... -->
+                                </div>
+                                <!-- Time buttons for Date 2 -->
+                                <div class="time-slot" data-date="7.11" style="display: none;">
+                                    <button class="time-button">10:05 84/100
+                                    </button>
+                                    <button class="time-button">12:06 71/120
+                                    </button>
+                                    <button class="time-button">14:06 148/150
+                                    </button>
+                                    <button class="time-button">18:06 131/200
+                                    </button>
+                                    <!-- ... more time buttons ... -->
+                                </div>
+                                <!-- ... more time slots for each date ... -->
+                            
+                                <!-- Time buttons for Date 1 -->
+                                <div class="time-slot" data-date="8.11" style="display: none;">
+                                    <button class="time-button">10:10 49/100
+                                    </button>
+                                    <button class="time-button">14:11 27/120
+                                    </button>
+                                    <button class="time-button">16:11 94/150
+                                    </button>
+                                    <button class="time-button">18:11 184/200
+                                    </button>
+                                    <!-- ... more time buttons ... -->
+                                </div>
+                                <!-- Time buttons for Date 2 -->
+                                <div class="time-slot" data-date="9.11" style="display: none;">
+                                    <button class="time-button">10:15 43/100
+                                    </button>
+                                    <button class="time-button">14:16 116/120
+                                    </button>
+                                    <button class="time-button">16:16 135/150
+                                    </button>
+                                    <button class="time-button">18:16 174/200
+                                    </button>
+                                    <!-- ... more time buttons ... -->
+                                </div>
+                                <!-- ... more time slots for each date ... -->
+                            
+                                <!-- Time buttons for Date 1 -->
+                                <div class="time-slot" data-date="10.11" style="display: none;">
+                                    <button class="time-button">10:20 74/100
+                                    </button>
+                                    <button class="time-button">14:21 94/120
+                                    </button>
+                                    <button class="time-button">16:21 142/150
+                                    </button>
+                                    <button class="time-button">18:21 194/200
+                                    </button>
+                                    <!-- ... more time buttons ... -->
+                                </div>
+                                <!-- Time buttons for Date 2 -->
+                                <div class="time-slot" data-date="11.11" style="display: none;">
+                                    <button class="time-button">10:25 24/100
+                                    </button>
+                                    <button class="time-button">12:26 58/120
+                                    </button>
+                                    <button class="time-button">14:26 55/150
+                                    </button>
+                                    <button class="time-button">16:26 35/200
+                                    </button>
+                                    <button class="time-button">18:26 214/320
+                                    </button>
+                                    <button class="time-button">20:26 203/360
+                                    </button>
+                                    <!-- ... more time buttons ... -->
+                                </div>
+                                <!-- ... more time slots for each date ... -->
+                                <div class="time-slot" data-date="12.11" style="display: none;">
+                                    <button class="time-button">10:30 64/100
+                                    </button>
+                                    <button class="time-button">12:31 113/120
+                                    </button>
+                                    <button class="time-button">14:31 47/150
+                                    </button>
+                                    <button class="time-button">16:31 135/200
+                                    </button>
+                                    <button class="time-button">18:31 156/320
+                                    </button>
+                                    <button class="time-button">20:31 175/360
+                                    </button>
+                                    <!-- ... more time buttons ... -->
+                                </div>
+                            </div>
+                            </div>
+                            <div class="seat-selection-container" style="display: none;">
+                                <h3>Select Your Seats</h3>
+                                <div class="counter" id="adultCounter">
+                                    <label for="adults">Adults (€16.52 each):</label>
+                                    <button class="button" onclick="changeTicketCount('adults', -1)">-</button>
+                                    <input type="text" id="adults" value="0" readonly>
+                                    <button class="button" onclick="changeTicketCount('adults', 1)">+</button>
+                                </div>
+                                
+                                <div class="counter" id="childrenCounter">
+                                    <label for="children">Children (€11.92 each):</label>
+                                    <button class="button" onclick="changeTicketCount('children', -1)">-</button>
+                                    <input type="text" id="children" value="0" readonly>
+                                    <button class="button" onclick="changeTicketCount('children', 1)">+</button>
+                                </div>
+                                
+                                <div class="counter" id="seniorCounter">
+                                    <label for="seniors">Seniors (€13.72 each):</label>
+                                    <button class="button" onclick="changeTicketCount('seniors', -1)">-</button>
+                                    <input type="text" id="seniors" value="0" readonly>
+                                    <button class="button" onclick="changeTicketCount('seniors', 1)">+</button>
+                                </div>
+                                
+                                <div class="counter" id="studentsCounter">
+                                    <label for="students">Students (€11.92 each):</label>
+                                    <button class="button" onclick="changeTicketCount('students', -1)">-</button>
+                                    <input type="text" id="students" value="0" readonly>
+                                    <button class="button" onclick="changeTicketCount('students', 1)">+</button>
+                                </div>
+                                
+                                <div class="counter" id="wheelchairCounter">
+                                    <label for="wheelchair">Wheelchair (€11.92 each):</label>
+                                    <button class="button" onclick="changeTicketCount('wheelchair', -1)">-</button>
+                                    <input type="text" id="wheelchair" value="0" readonly>
+                                    <button class="button" onclick="changeTicketCount('wheelchair', 1)">+</button>
+                                </div>
+                                
+                                <div id="totalCounter">
+                                    <label for="total">Total:</label>
+                                    <input type="text" id="total" value="€0" readonly>
+                                </div>
+                                <div class="seat-plan-idea">
+                                    <div class="inactive"> 
+                                   <button class="inactive-btn"></button>
+                                   <p>Inactive Seats</p>
+                               </div> 
+                               <div class="active">
+                                   <button class="active-btn"></button>
+                                   <p>Active Seats</p>
+                               </div>
+                               <div class="selected">
+                                   <button class="selected-btn"></button>
+                                   <p>Selected Seats</p>
+                               </div>
+                               </div>
+                                <div class="seat-selection-container" style="display: none;"></div>
+                                <div class="seats-container">
+                                    <!-- Seat buttons will be dynamically inserted here by JavaScript -->
+                                </div>
+                                   <div class="buy-ticket-section">
+                                       <!-- The buy ticket button will be dynamically added here -->
+                                   </div>
+                                   <div class="timer-container">
+                                    <div id="countdown-timer">Timer will appear here</div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal" id="ticket-modal-movie-7">
+                            <div class="modal-content-ticket">
+                                <span class="close-btn" id="close-ticket-modal-movie-7"><i class="fas fa-arrow-left"></i></span>
+                                <h2 class="movie-title-modal">Movie Title</h2>
+                                <h2>Select a Location</h2>
+                                <div class="location-buttons-container">
+                                    <button class="location-button">Helsinki:
+                                        Itis
+                                    </button>
+                                    <button class="location-button">Helsinki:
+                                        Tennispalatsi
+                                    </button>
+                                    <button class="location-button">Vantaa:
+                                        Flamingo
+                                    </button>
+                                    <button class="location-button">Espoo:
+                                        Omena
+                                    </button>
+                                    <button class="location-button">Espoo:
+                                        Sello
+                                    </button>
+                                </div>
+                                <div class="date-selection-container" style="display: none;">
+                                    <h3>Select Date</h3>
+                                    <div class="date-buttons-container">
+                                        <!-- Dynamically generate or manually insert buttons for the dates -->
+                                        <button class="date-button">6.11</button>
+                                        <button class="date-button">7.11</button>
+                                        <button class="date-button">8.11</button>
+                                        <button class="date-button">9.11</button>
+                                        <button class="date-button">10.11</button>
+                                        <button class="date-button">11.11</button>
+                                        <button class="date-button">12.11</button>
+                                        <!-- Add more buttons for each date -->
+                                    </div>
+                                </div>
+                                <div class="time-selection-container" style="display: none;">
+                                    <h3>Select a Time</h3>
+                                    <div class="time-buttons-container" id="time-buttons-container-movie-5">
+                                        <!-- Time buttons for Date 1 -->
+                                        <div class="time-slot" data-date="6.11" style="display: none;">
+                                            <button class="time-button">10:07 74/100
+                                            </button>
+                                            <button class="time-button">12:01 59/120
+                                            </button>
+                                            <button class="time-button">14:01 60/160
+                                            </button>
+                                            <button class="time-button">18:01 36/200
+                                            </button>
+                                            <!-- ... more time buttons ... -->
+                                        </div>
+                                        <!-- Time buttons for Date 2 -->
+                                        <div class="time-slot" data-date="7.11" style="display: none;">
+                                            <button class="time-button">10:05 84/100
+                                            </button>
+                                            <button class="time-button">12:06 71/120
+                                            </button>
+                                            <button class="time-button">14:06 148/150
+                                            </button>
+                                            <button class="time-button">18:06 131/200
+                                            </button>
+                                            <!-- ... more time buttons ... -->
+                                        </div>
+                                        <!-- ... more time slots for each date ... -->
+                                    
+                                        <!-- Time buttons for Date 1 -->
+                                        <div class="time-slot" data-date="8.11" style="display: none;">
+                                            <button class="time-button">10:10 49/100
+                                            </button>
+                                            <button class="time-button">14:11 27/120
+                                            </button>
+                                            <button class="time-button">16:11 94/150
+                                            </button>
+                                            <button class="time-button">18:11 184/200
+                                            </button>
+                                            <!-- ... more time buttons ... -->
+                                        </div>
+                                        <!-- Time buttons for Date 2 -->
+                                        <div class="time-slot" data-date="9.11" style="display: none;">
+                                            <button class="time-button">10:15 43/100
+                                            </button>
+                                            <button class="time-button">14:16 116/120
+                                            </button>
+                                            <button class="time-button">16:16 135/150
+                                            </button>
+                                            <button class="time-button">18:16 174/200
+                                            </button>
+                                            <!-- ... more time buttons ... -->
+                                        </div>
+                                        <!-- ... more time slots for each date ... -->
+                                    
+                                        <!-- Time buttons for Date 1 -->
+                                        <div class="time-slot" data-date="10.11" style="display: none;">
+                                            <button class="time-button">10:20 74/100
+                                            </button>
+                                            <button class="time-button">14:21 94/120
+                                            </button>
+                                            <button class="time-button">16:21 142/150
+                                            </button>
+                                            <button class="time-button">18:21 194/200
+                                            </button>
+                                            <!-- ... more time buttons ... -->
+                                        </div>
+                                        <!-- Time buttons for Date 2 -->
+                                        <div class="time-slot" data-date="11.11" style="display: none;">
+                                            <button class="time-button">10:25 24/100
+                                            </button>
+                                            <button class="time-button">12:26 58/120
+                                            </button>
+                                            <button class="time-button">14:26 55/150
+                                            </button>
+                                            <button class="time-button">16:26 35/200
+                                            </button>
+                                            <button class="time-button">18:26 214/320
+                                            </button>
+                                            <button class="time-button">20:26 203/360
+                                            </button>
+                                            <!-- ... more time buttons ... -->
+                                        </div>
+                                        <!-- ... more time slots for each date ... -->
+                                        <div class="time-slot" data-date="12.11" style="display: none;">
+                                            <button class="time-button">10:30 64/100
+                                            </button>
+                                            <button class="time-button">12:31 113/120
+                                            </button>
+                                            <button class="time-button">14:31 47/150
+                                            </button>
+                                            <button class="time-button">16:31 135/200
+                                            </button>
+                                            <button class="time-button">18:31 156/320
+                                            </button>
+                                            <button class="time-button">20:31 175/360
+                                            </button>
+                                            <!-- ... more time buttons ... -->
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="seat-selection-container" style="display: none;">
+                                        <h3>Select Your Seats</h3>
+                                        <div class="counter" id="adultCounter">
+                                            <label for="adults">Adults (€16.52 each):</label>
+                                            <button class="button" onclick="changeTicketCount('adults', -1)">-</button>
+                                            <input type="text" id="adults" value="0" readonly>
+                                            <button class="button" onclick="changeTicketCount('adults', 1)">+</button>
+                                        </div>
+                                        
+                                        <div class="counter" id="childrenCounter">
+                                            <label for="children">Children (€11.92 each):</label>
+                                            <button class="button" onclick="changeTicketCount('children', -1)">-</button>
+                                            <input type="text" id="children" value="0" readonly>
+                                            <button class="button" onclick="changeTicketCount('children', 1)">+</button>
+                                        </div>
+                                        
+                                        <div class="counter" id="seniorCounter">
+                                            <label for="seniors">Seniors (€13.72 each):</label>
+                                            <button class="button" onclick="changeTicketCount('seniors', -1)">-</button>
+                                            <input type="text" id="seniors" value="0" readonly>
+                                            <button class="button" onclick="changeTicketCount('seniors', 1)">+</button>
+                                        </div>
+                                        
+                                        <div class="counter" id="studentsCounter">
+                                            <label for="students">Students (€11.92 each):</label>
+                                            <button class="button" onclick="changeTicketCount('students', -1)">-</button>
+                                            <input type="text" id="students" value="0" readonly>
+                                            <button class="button" onclick="changeTicketCount('students', 1)">+</button>
+                                        </div>
+                                        
+                                        <div class="counter" id="wheelchairCounter">
+                                            <label for="wheelchair">Wheelchair (€11.92 each):</label>
+                                            <button class="button" onclick="changeTicketCount('wheelchair', -1)">-</button>
+                                            <input type="text" id="wheelchair" value="0" readonly>
+                                            <button class="button" onclick="changeTicketCount('wheelchair', 1)">+</button>
+                                        </div>
+                                        
+                                        <div id="totalCounter">
+                                            <label for="total">Total:</label>
+                                            <input type="text" id="total" value="€0" readonly>
+                                        </div>
+                                        <div class="seat-plan-idea">
+                                            <div class="inactive"> 
+                                           <button class="inactive-btn"></button>
+                                           <p>Inactive Seats</p>
+                                       </div> 
+                                       <div class="active">
+                                           <button class="active-btn"></button>
+                                           <p>Active Seats</p>
+                                       </div>
+                                       <div class="selected">
+                                           <button class="selected-btn"></button>
+                                           <p>Selected Seats</p>
+                                       </div>
+                                       </div>
+                                        <div class="seat-selection-container" style="display: none;"></div>
+                                        <div class="seats-container">
+                                            <!-- Seat buttons will be dynamically inserted here by JavaScript -->
+                                        </div>
+                                           <div class="buy-ticket-section">
+                                               <!-- The buy ticket button will be dynamically added here -->
+                                           </div>
+                                           <div class="timer-container">
+                                            <div id="countdown-timer">Timer will appear here</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                <div id="allMoviesModal" class="seeall-modal">
+                    <div class="see-all-modal-content">
+                        <span class="close-button">&times;</span>
+                        <div class="movies-grid">
+                            <!-- Dynamically insert movie buttons here -->
+                        </div>
+                    </div>
+                </div> 
+                <div id="search-modal-container">
+                    <div id="box-movie-1" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-movie-2" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-movie-3" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-movie-4" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-movie-5" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-movie-6" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-movie-7" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-upcoming-movie-1" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-upcoming-movie-2" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-upcoming-movie-3" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-upcoming-movie-4" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-upcoming-movie-5" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                    <div id="box-upcoming-movie-6" class="movie-box">
+                        <!-- Movie image, title, year, etc. -->
+                        <div class="release-date"></div>
+                        <div class="age-rating"></div>
+                        <div class="genre"></div>
+                    </div>
+                </div>
+                <div class="buy-ticket-modal" id="buy-ticket-modal">
+                    <div class="modal-content">
+                        <span class="close-btn" id="close-buy-ticket-modal"><i class="fas fa-arrow-left"></i></span>
+                        <h2>Reservation Summary</h2>
+            
+                        <div id="buy-ticket-modal-content">
+                            <!-- The summary content will be dynamically inserted here by JavaScript -->
+                        </div>
+                        <button id="confirm-ticket-button" class="confirm-ticket-button">Confirm Ticket</button>
+                    </div>
+                </div> 
+                <div class="confirmation-modal" id="confirmation-modal" style="display: none;">
+                    <div class="modal-content">
+                        <iframe src="https://giphy.com/embed/1wX5TJZPqVw3HhyDYn" width="240" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                        <p>Order has been confirmed!</p>
+                        <h3>Thank you for purchasing the tickets!</h3>
+                    </div>
+                </div>         
+                <!-- Generic Modal Structure -->
+
+
+<!-- Repeat this structure for each movie -->
+
+    
+      <script src="script.js"></script>
+    </body>
+    </html>
