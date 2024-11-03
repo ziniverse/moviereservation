@@ -1,4 +1,44 @@
-# moviereservation
-A website created as an interactive prototype for a movie reservation site using HTML, CSS and JavaScript The Movie Reservation Site is a website designed to provide users with an interactive way to explore and learn about movies. This website includes features such as displaying current and upcoming movies, along with detailed information about each movie.
+# Movie Reservation System
+An interactive web-based application for reserving movie tickets, available here. This project simplifies the movie ticket reservation process with a user-friendly interface, allowing users to view available movies, select showtimes, choose seats, and reserve tickets.
 
-Features: Header Section: Displays the website title and a user icon for potential user-related features. Search Functionality: Allows users to search for movies. Current Movies Section: Highlights movies that are now playing, with a "See All" option. Upcoming Movies Section: Showcases upcoming movies, with a "See All" option. Modal Pop-Ups: Detailed information for each movie, including title, year, genres, duration, age rating, user ratings, cast and directors, synopsis, trailer link, and a "Book Now" button. Ticket Booking Modal: For each movie, users can select a location, date, time, and seat. Ticket prices are listed for different categories like adults, children, seniors, students, and wheelchair users. A visual representation of seat selection is provided. index.html: Contains the structure and content of the web application. styles.css:  Contains the styling for the website. script.js: Contains the interactive functionality, like opening modals, searching, and booking tickets. Font Awesome: For icons. Google Fonts: For typography. CDNJS: For additional CSS. OMDBAPI: used for fetching the movies from. . Future Improvements: User Authentication: Implement user login and registration for personalized experiences. Having seating plan from a database.
+## Features
+- Movie Listings: Displays available movies with details such as title, genre, and rating.
+- Showtime Selection: Allows users to pick showtimes for their preferred movies.
+- Seat Selection: Interactive seating layout to easily choose and reserve seats.
+- Responsive Design: Accessible on both desktop and mobile devices.
+## Getting Started
+Clone the repository:
+```
+git clone https://github.com/ziniverse/moviereservation.git
+cd moviereservation
+```
+Open index.html in your browser to launch the application.
+
+Alternatively, you can access the live version here https://ziniverse.github.io/moviereservation/
+
+## Usage
+- Browse Movies: View a list of available movies with essential details.
+- Choose Showtime: Select a movie and pick a preferred showtime.
+- Select Seats: Choose seats from the seating chart. Reserved seats are visually distinct.
+- Confirm Reservation: Once seats are selected, finalize the reservation.
+## Project Structure
+```
+moviereservation/
+├── index.html        # The main HTML page
+├── style.css         # Contains the styling for the app
+└── script.js         # JavaScript functionality for handling reservations
+```
+## Built With
+- HTML - For structuring the web page.
+- CSS - For styling and layout.
+- JavaScript - For dynamic seat selection and reservation handling.
+- ChatGPT was used as an assistative building tool as part of my research work in this project
+## Future Enhancements
+User Authentication: Enable login to save and manage reservations.
+Payment Integration: Add secure payment processing for ticket purchases.
+Notifications: Allow users to receive reminders for reserved showtimes.
+## License
+This project is open-source and available under the MIT License.
+
+## Contributing
+Contributions are welcome! Feel free to submit pull requests or report issues to improve this project.
